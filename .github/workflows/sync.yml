@@ -24,6 +24,7 @@ jobs:
           REMOTE_FILE_PATH: ${{ secrets.REMOTE_FILE_PATH }}
           LOCAL_FILE_DIR: "data"
         run: |
+          mkdir -p $LOCAL_FILE_DIR
           TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
           FILE_NAME=$(basename $REMOTE_FILE_PATH)
           lftp -c "set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no'; open -u $SFTP_USERNAME,$SFTP_PASSWORD sftp://$SFTP_SERVER; get $REMOTE_FILE_PATH -o $LOCAL_FILE_DIR/${FILE_NAME%.*}_$TIMESTAMP.${FILE_NAME##*.}"
