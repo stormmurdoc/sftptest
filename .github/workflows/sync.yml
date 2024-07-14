@@ -2,7 +2,7 @@ name: SFTP File Download
 
 on:
   schedule:
-    - cron: '22 13 * * *' # Runs once a day
+    - cron: '25 13 * * *' # Runs once a day
   workflow_dispatch: # Allows manual triggyring of the workflow
 
 jobs:
