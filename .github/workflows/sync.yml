@@ -22,7 +22,7 @@ jobs:
           SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
           SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
           REMOTE_FILE_PATH: ${{ secrets.REMOTE_FILE_PATH }}
-          LOCAL_FILE_DIR: "./data"
+          LOCAL_FILE_DIR: "data"
         run: |
           TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
           FILE_NAME=$(basename $REMOTE_FILE_PATH)
